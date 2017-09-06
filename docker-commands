@@ -1,0 +1,20 @@
+# Docker Commands
+
+### Removes all docker images that does not have a repository name and TAG.
+## One situation that might cause this to happen is when you build an image using a 
+## repositoriy name that already exist. The resulting image that is created will have 
+## a <none> for both the REPOSITORY and TAG field. 
+docker rmi $(docker images -f dangling=true -q)
+
+### Remove a specific docker image. 
+## Run `docker images` to list all exisiting docker on your machine.
+docker rmi <IMAGE ID>
+
+## Remove all docker processes. 
+## Exiting the image does not end the docker process. Treat docker processes like 
+## VMs. Stopping a VM does not equate to deleting the VM. By stopping the VM, the 
+## VM merely "pauses" and you can boot up the VM again. On the otherhand, deleting
+## the VM will release all resources the VM is taking up and you won't be able to 
+## boot up the same VM again.
+docker rm $(docker ps -a -q)
+
