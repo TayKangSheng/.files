@@ -25,3 +25,8 @@ docker rm $(docker ps -a -q)
 ## Note: Running this will spin up a new process. If the process already exists, a 
 ## dangling process will be created. 
 docker run -it <image-name> /bin/bash
+
+### Mount a volume inside the docker image.
+## Mount your host directory so that you can edit host files and it will be read inside
+## the docker. Mainly for development work. 
+docker run -v /host/directory:/container/directory -other -options image_name command_to_run
