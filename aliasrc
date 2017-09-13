@@ -1,5 +1,4 @@
 
-alias r!="source ~/.aliasrc"
 alias c="clear"
 alias ll="ls -l"
 alias lla="ls -al"
