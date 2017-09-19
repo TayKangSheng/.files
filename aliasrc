@@ -1,4 +1,5 @@
 
 alias c="clear"
+alias r="rails"
 alias ll="ls -l"
 alias lla="ls -al"
