@@ -9,7 +9,7 @@ $ cd
 $ git clone https://github.com/TayKangSheng/.files.git
 
 # Add initialization script into .bashrc
-$ "source ~/.files/main.sh" >> ~/.bashrc
+$ echo "source ~/.files/main.sh" >> ~/.bashrc
 
 # Reload .bashrc
 $ source ~/.bashrc
