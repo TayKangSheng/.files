@@ -1,6 +1,13 @@
 set -e
 set -x
 
+if [ -e ~/.zshrc ]
+then
+  echo "this does not seems like a brand new machine."
+  echo "this script is meant for setting up new machines."
+  exit 1
+fi
+
 # setting brew permissions
 #   https://stackoverflow.com/questions/16432071/how-to-fix-homebrew-permissions
 sudo chown -R $(whoami) $(brew --prefix)/*
