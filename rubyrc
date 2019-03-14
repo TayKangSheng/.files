@@ -5,5 +5,3 @@ alias be="bundle exec"
 alias ber="bundle exec rails"
 alias bers="bundle exec rails s"
 alias berc="bundle exec rails c"
-
-alias rubocopb="rubocop -a $(git diff --name-only master)"
