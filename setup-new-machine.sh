@@ -36,7 +36,8 @@ git clone https://github.com/powerline/fonts.git
 ./fonts/install.sh
 rm -rf fonts
 
-# install git aliases
+# setup git configurations
+#   alias
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.lg "log --all --graph --full-history --color --date=short --pretty=format:''%x1b[31m%h%x09%x1b[30;1m%ad%x1b[0m%x1b[32m%d%x1b[0m%x20%s%x20%x1b[34;1m[%aE]''"
@@ -45,3 +46,5 @@ git config --global alias.cm commit -m
 git config --global alias.pl pull
 git config --global alias.ph push
 git config --global alias.rs1 "reset HEAD~1 --soft"
+#   pager
+git config --global pager.branch false
