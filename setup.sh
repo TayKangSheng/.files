@@ -30,3 +30,8 @@ echo "" >> ~/.zshrc
 echo "# setup for https://github.com/TayKangSheng/.files" >> ~/.zshrc
 echo "source ${local_dir/setup.sh/main.sh}" >> ~/.zshrc
 source ${local_dir/setup.sh/main.sh}
+
+# install powerline fonts
+git clone https://github.com/powerline/fonts.git
+./fonts/install.sh
+rm -rf fonts
