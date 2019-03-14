@@ -48,3 +48,5 @@ git config --global alias.ph push
 git config --global alias.rs1 "reset HEAD~1 --soft"
 #   pager
 git config --global pager.branch false
+#   help
+git config --global help.autocorrect 1
