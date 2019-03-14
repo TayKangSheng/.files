@@ -8,8 +8,7 @@ then
   exit 1
 fi
 
-# setting brew permissions
-#   https://stackoverflow.com/questions/16432071/how-to-fix-homebrew-permissions
+# setting brew permissions [https://stackoverflow.com/questions/16432071/how-to-fix-homebrew-permissions]
 sudo chown -R $(whoami) $(brew --prefix)/*
 brew update
 
@@ -21,6 +20,8 @@ sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+#   install useful oh-my-zsh plugins. [https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins]
+sed -i '' 's/plugins=(git)/plugins=(git last-working-dir z)/' ~/.zshrc
 
 # set up .files
 local_dir=$0
