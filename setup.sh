@@ -21,6 +21,12 @@ sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 #   setup zsh config
 touch .zshrc
 
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # set up .files
 local_dir=$0
+echo "" >> ~/.zshrc 
+echo "# setup for https://github.com/TayKangSheng/.files" >> ~/.zshrc
 echo "source ${local_dir/setup.sh/main.sh}" >> ~/.zshrc
+source ${local_dir/setup.sh/main.sh}
