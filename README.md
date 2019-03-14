@@ -8,9 +8,9 @@ $ cd
 # Clone the repository
 $ git clone https://github.com/TayKangSheng/.files.git
 
-# Add initialization script into .bashrc
-$ echo "source ~/.files/main.sh" >> ~/.bashrc
+# Add initialization script into .zshrc
+$ echo "source ~/.files/main.sh" >> ~/.zshrc
 
 # Reload .bashrc
-$ source ~/.bashrc
+$ source ~/.zshrc
 ```
