@@ -8,6 +8,10 @@ then
   exit 1
 fi
 
+# current directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo "Current Directory: $DIR"
+
 # setting brew permissions [https://stackoverflow.com/questions/16432071/how-to-fix-homebrew-permissions]
 sudo chown -R $(whoami) $(brew --prefix)/*
 brew update
@@ -26,7 +30,7 @@ sed -i '' 's/plugins=(git)/plugins=(last-working-dir z)/' ~/.zshrc
 # set up .files
 local_dir=$0
 touch .zshrc
-echo "" >> ~/.zshrc 
+echo "" >> ~/.zshrc
 echo "# setup for https://github.com/TayKangSheng/.files" >> ~/.zshrc
 echo "source ${local_dir/setup.sh/main.sh}" >> ~/.zshrc
 source ${local_dir/setup.sh/main.sh}
@@ -37,16 +41,9 @@ git clone https://github.com/powerline/fonts.git
 rm -rf fonts
 
 # setup git configurations
-#   alias
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.lg "log --all --graph --full-history --color --date=short --pretty=format:''%x1b[31m%h%x09%x1b[30;1m%ad%x1b[0m%x1b[32m%d%x1b[0m%x20%s%x20%x1b[34;1m[%aE]''"
-git config --global alias.br branch
-git config --global alias.cm commit -m
-git config --global alias.pl pull
-git config --global alias.ph push
-git config --global alias.rs1 "reset HEAD~1 --soft"
-#   pager
-git config --global pager.branch false
-#   help
-git config --global help.autocorrect 1
+#   Symlink .gitconfig file to $HOME directory
+ln -s $DIR/.gitconfig $HOME/.gitconfig
+
+#   Localise configs that needs $HOME path
+git config --global core.excludesfile = $HOME/.gitignore_global
+git config --global commit.template $HOME/.gitmessage.txt

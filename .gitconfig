@@ -1,0 +1,49 @@
+[user]
+	name = Tay Kang Sheng
+	email = kangsheng@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[core]
+	excludesfile = /Users/KANG/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	ui = always
+[color "branch"]
+	current = green reverse
+	local = green
+	remote = yellow
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = red
+[push]
+	default = current
+[rerere]
+	enabled = false
+[pull]
+	rebase = false
+[commit]
+	template = /Users/KANG/.gitmessage.txt
+[alias]
+	again = commit -c ORIG_HEAD
+	back = reset --soft HEAD~1
+	br = branch -v
+	cm = commit -m
+	co = checkout
+	lg = "log --all --graph --full-history --color --date=short --pretty=format:''%x1b[31m%h%x09%x1b[30;1m%ad%x1b[0m%x1b[32m%d%x1b[0m%x20%s%x20%x1b[34;1m[%aE]''"
+	ll = log --oneline --decorate
+	pl = pull
+	ph = push
+	st = status
+[pager]
+	branch = false
+[help]
+	autocorrect = 1
