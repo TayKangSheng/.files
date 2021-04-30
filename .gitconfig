@@ -35,7 +35,7 @@
 [alias]
 	again = commit -c ORIG_HEAD
 	back = reset --soft HEAD~1
-	br = branch -v
+	br = branch
 	cm = commit -m
 	co = checkout
 	lg = "log --all --graph --full-history --color --date=short --pretty=format:''%x1b[31m%h%x09%x1b[30;1m%ad%x1b[0m%x1b[32m%d%x1b[0m%x20%s%x20%x1b[34;1m[%aE]''"
