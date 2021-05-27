@@ -43,6 +43,7 @@
 	pl = pull
 	ph = push
 	st = status
+	clean-merged = branch -d $(git branch --merged | grep -v master | grep -v main | grep -v \* | xargs)
 [pager]
 	branch = false
 [help]
