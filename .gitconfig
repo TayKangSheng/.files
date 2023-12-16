@@ -6,14 +6,11 @@
 	smudge = git-lfs smudge %f
 	required = true
 [core]
-	excludesfile = /Users/KANG/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [color]
 	ui = always
 [color "branch"]
@@ -31,7 +28,7 @@
 [pull]
 	rebase = false
 [commit]
-	template = /Users/KANG/.gitmessage.txt
+	template = ~/.gitmessage.txt
 [alias]
 	again = commit -c ORIG_HEAD
 	back = reset --soft HEAD~1
